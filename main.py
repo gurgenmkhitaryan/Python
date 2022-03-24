@@ -1,17 +1,10 @@
-def numbers(x):
-    digit = 0
+#Реализовать склонение слова «процент» во фразе
+# «N процентов». Вывести эту фразу на экран отдельной строкой для каждого из чисел в интервале от 1 до 100:
 
-    while x != 0:
-        digit += x % 10
-        x //= 10
-
-    return digit
-
-
-calc = [i ** 3 for i in range(1, 1001, 2)]
-
-result = sum(filter(lambda num: numbers(num) % 7 == 0, calc))
-result_with_17 = sum(filter(lambda num: numbers(num + 17) % 7 == 0, calc))
-
-print(result)
-print(result_with_17)
+num = int(input('введите число от 1 до 100: '))
+if num == 1:
+    print(num, 'процент')
+elif 1 < num < 5:
+    print(num, 'процента')
+else:
+    print(num, 'процентов')
