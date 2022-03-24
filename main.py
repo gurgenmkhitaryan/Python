@@ -1,8 +1,17 @@
-# 1. Реализовать вывод информации о промежутке времени в зависимости от его продолжительности duration в секундах:
+def numbers(x):
+    digit = 0
 
-seconds = int(input('введите секунды: '))
-day = seconds // 86400
-hour = (seconds // 3600) % 24
-minutes = (seconds // 60) % 60
-sec = seconds % 60
-print(day, 'дн', hour, 'час', min, 'мин', sec, 'сек')
+    while x != 0:
+        digit += x % 10
+        x //= 10
+
+    return digit
+
+
+calc = [i ** 3 for i in range(1, 1001, 2)]
+
+result = sum(filter(lambda num: numbers(num) % 7 == 0, calc))
+result_with_17 = sum(filter(lambda num: numbers(num + 17) % 7 == 0, calc))
+
+print(result)
+print(result_with_17)
